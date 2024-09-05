@@ -1,0 +1,12 @@
+
+.bi-img{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+.btn:hover{
+  color: white;
+  background: rgb(0, 0, 0);
+}

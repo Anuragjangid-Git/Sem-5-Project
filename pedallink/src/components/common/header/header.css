@@ -1,0 +1,60 @@
+.main{
+    display: flex;
+    float: left;
+    align-items: center;
+  width: 100%;
+  height: 70px;
+  float: left;
+  gap: 100px;
+padding:10px;
+  
+}
+.logo-text{
+  display: flex;
+  margin: 0% 2% 0% 0%;
+  cursor: pointer;
+  align-items: center;
+  font-size:large;
+    font-weight: 600;
+}
+.logo{
+
+    width: 150px;
+    height: 60px;
+    padding: 2% 0% 1% 40%;
+    float: left;
+    
+}
+.ride-about{
+    display: flex;
+    padding-bottom: 8px;
+     gap: 50px;
+    .rtext{
+        font-size: medium;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .about{
+        display: flex;
+        align-items: center;
+    }
+}
+.profile-icon{
+   
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    padding: 2px 4px 2px 4px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1% 5% 0% 0%;
+    justify-content: center;
+    
+    
+}
