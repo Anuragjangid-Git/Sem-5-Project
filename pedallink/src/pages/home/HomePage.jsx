@@ -1,13 +1,16 @@
 import React from "react";
 import "./HomePage.css";
-import BookRide from "../../bookride/BookRide";
-import GoogleMapSection from "../../googlemapsection/GoogleMapSection";
-import BicycleCard from "./bicyclecard/BicycleCard";
-import HomeContent from "./homePage_content/HomeContent";
-
+import Header from '../../components/common/header/Header'
+import BookRide from '../../components/bookride/BookRide'
+import GoogleMapSection from '../../components/googlemapsection/GoogleMapSection'
+import HomeContent from '../home/homePage_content/HomeContent'
+import BicycleCard from '../home/bicyclecard/BicycleCard' 
 const HomePage = () => {
   return (
     <div>
+      <div className="fixed w-[100%] z-10">
+      <Header />
+      </div>
       <div className="home ">
         <BookRide />
         <GoogleMapSection />

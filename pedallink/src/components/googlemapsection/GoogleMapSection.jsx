@@ -3,7 +3,8 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 const GoogleMapSection = () => {
     const containerStyle = {
         width: '100%',
-        height: window.innerWidth*0.5
+        height: window.innerWidth*0.5,
+        marginTop:"45px",  
       };
       
       const center = {

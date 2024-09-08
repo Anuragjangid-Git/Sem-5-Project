@@ -3,7 +3,7 @@ import React from "react";
 const HomeContent = () => {
   return (
     <div className="flex  ">
-      <div className=" h-[400px] w-[50%] ">
+      <div className=" h-[400px] w-[60%] ">
         <h1 className="text-[80px] leading-none font-bold px-[60px]">
           Feel the pleasure on bike
         </h1>

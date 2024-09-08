@@ -7,14 +7,15 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
-     background: url("./1.jpg"); 
+.bg{
+    background: url("./1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: hidden;
 }
 .wrapper{
+    
     display: flex;
     justify-content: center;
     align-items: center;

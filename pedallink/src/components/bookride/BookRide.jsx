@@ -6,7 +6,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 const BookRide = () => {
    
   return (
-    <div className="serach  p-2 md:p-5 border rounded-xl shadow-md ">
+    <div className="serach  p-2 md:p-5 border rounded-xl shadow-md  ">
       <div>
         <h1 className="font-bold text-3xl ">Book Your Ride</h1>
       </div>
