@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import "./Register.css";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+
+import { RegisterApi,LoginApi } from "../../Firebase/Authapi";
 import { auth } from "../../Firebase/FirebaseConfig";
 import { Navigate } from "react-router-dom";
+import { postUserData } from "../../Firebase/FireStore";
 const Register = ({user}) => {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
@@ -19,32 +21,29 @@ const Register = ({user}) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [Username,setUserName] = useState("");
+  const [name,setName] = useState("");
 
-  const handleSignUp = ()=>{
-    if(!email || !password) return;
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>{
-      const user = userCredential.user;
-      console.log(user);
-    }).catch((error)=>{
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode,errorMessage);
-    });
+  const Register=async ()=>{
+    try {
+      let res= await RegisterApi(email, password);
+      postUserData({name:name, email:email})
+      localStorage.setItem('UserEmail',res.user.email);
+    } catch (error) {
+      console.log(error);
+    }
+  
   };
-  const handleSignIn= () =>{
-    if(!email || !password) return;
-    signInWithEmailAndPassword(auth, email, password).then((userCredential)=>{
-      const user = userCredential.user;
-      console.log(user);
-    }).catch((error)=>{
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode,errorMessage);
-    });
-  }
+  const Login=async ()=>{
+    try {
+      let res= await LoginApi(email,password);
+      localStorage.setItem('UserEmail',res.user.email);
+    } catch (error) {
+      console.log(error);
+    }
+  
+  };
 if(user){
-  return <Navigate to ='/home' />
+  return <Navigate to ='/home' /> 
 }
   return (
     <div className="bg" >
@@ -112,7 +111,7 @@ if(user){
               type="submit"
               className="submit"
               value="Sign In"
-              onClick={handleSignIn}
+              onClick={Login}
             />
           </div>
         </div>
@@ -141,6 +140,7 @@ if(user){
                 type="text"
                 className="input-field"
                 placeholder="Username"
+                onChange={(e)=>{setName(e.target.value)}}
               />
               <i className="bx bx-user"></i>
             </div>
@@ -170,7 +170,7 @@ if(user){
           </div>
           <div className="input-box">
             <input type="submit" className="submit" value="Register"
-          onClick={handleSignUp} />
+          onClick={Register} />
           </div>
         </div>
       </div>

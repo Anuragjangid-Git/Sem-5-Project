@@ -70,6 +70,9 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-
+.dropbtn :hover{
+ color: #565555;
+  
+}
 
 

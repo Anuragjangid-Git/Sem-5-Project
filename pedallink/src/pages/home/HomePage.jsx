@@ -5,6 +5,7 @@ import BookRide from '../../components/bookride/BookRide'
 import GoogleMapSection from '../../components/googlemapsection/GoogleMapSection'
 import HomeContent from '../home/homePage_content/HomeContent'
 import BicycleCard from '../home/bicyclecard/BicycleCard' 
+import Footer from "../../components/common/footer/Footer";
 const HomePage = () => {
   return (
     <div>
@@ -38,6 +39,9 @@ const HomePage = () => {
           bike_name={"Raven Cleo v2"}
         />
         
+      </div>
+      <div>
+        <Footer/>
       </div>
     </div>
   );
